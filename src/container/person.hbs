@@ -1,17 +1,17 @@
 <div>
-  {{#with person}}
-    <div>
-      <h1>{{name}}</h1>
-      <p>Age:{{age}}, Gender:{{gender}}</p>
-      <hr />
-      {{#with address}}
-        <address>Address:<br />
-          Street:{{street}}, City:{{city}}, state:{{state}},
-          zip:
-          {{zip}}, country:{{country}}
-        </address>
-      {{/with}}
-    </div>
+    {{#with person}}
+      <div>
+        <h1>{{name}}</h1>
+        <p>Age:{{age}}, Gender:{{gender}}</p>
+        <hr />
+        {{#with address}}
+          <address>Address:<br />
+            Street:{{street}}, City:{{city}}, state:{{state}},
+            zip:
+            {{zip}}, country:{{country}}
+          </address>
+        {{/with}}
+      </div>
     <hr />
 <div>
       {{>title big=true data="Education"}} 
@@ -23,7 +23,7 @@
             graduationYear: {{graduationYear}}
       {{/with}}
 </div>
-       <hr /><br>
+       <hr><br>
     <div>
             {{>title big=true data="WorkExperience"}} 
             {{#with workExperience.[0]}}
