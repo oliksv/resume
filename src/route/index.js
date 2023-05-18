@@ -3,7 +3,6 @@ const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 // ================================================================
-
 var header = {
   name: {
     firstname: 'Mark',
@@ -30,7 +29,6 @@ var footer = {
     },
   },
 }
-
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -51,6 +49,7 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    layout: 'basic',
     page: {
       title: 'Resume | Summary',
     },
@@ -77,6 +76,7 @@ router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
     // ↙ сюди вводимо JSON дані
+    layout: 'basic',
     page: {
       title: 'Resume | Skills',
     },
@@ -109,6 +109,7 @@ router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
     // ↙ сюди вводимо JSON дані
+    layout: 'basic',
     page: {
       title: 'Resume | Education',
     },
@@ -135,7 +136,7 @@ router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('work', {
     // ↙ сюди вводимо JSON дані
-    layout: 'big',
+    layout: 'basic',
     page: {
       title: 'Resume | Work',
     },
@@ -186,7 +187,10 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',
+    layout: 'basic',
+    page: {
+      title: 'Resume | Person',
+    },
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -280,12 +284,13 @@ router.get('/person', function (req, res) {
     },
   })
 })
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-    layout: 'bio',
+    layout: 'basic',
+    page: {
+      title: 'Resume | Bio',
+    },
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
     birthplace:
@@ -382,7 +387,10 @@ router.get('/bio', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-    layout: 'program',
+    layout: 'basic',
+    page: {
+      title: 'Resume | Program',
+    },
     programs: {
       excursion: {
         name: 'Cultural Tour',
@@ -459,6 +467,140 @@ router.get('/program', function (req, res) {
           },
         ],
       },
+    },
+  })
+})
+
+// ================================================================
+// ================================================================
+
+router.get('/web', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('web', {
+    layout: 'basic',
+    page: {
+      title: 'Resume | Web',
+    },
+    web: {
+      languages: [
+        {
+          name: 'HTML',
+          version: 'HTML5',
+          description:
+            'Hypertext Markup Language is the standard markup language for creating web pages and web applications.',
+          elements: [
+            {
+              name: 'div',
+              description:
+                'Defines a division or a section in an HTML document.',
+              attributes: [
+                {
+                  name: 'id',
+                  description:
+                    'Specifies a unique id for an HTML element.',
+                },
+                {
+                  name: 'class',
+                  description:
+                    'Specifies one or more class names for an HTML element.',
+                },
+              ],
+            },
+            {
+              name: 'p',
+              description:
+                'Defines a paragraph in an HTML document.',
+              attributes: [
+                {
+                  name: 'id',
+                  description:
+                    'Specifies a unique id for an HTML element.',
+                },
+                {
+                  name: 'class',
+                  description:
+                    'Specifies one or more class names for an HTML element.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'CSS',
+          version: 'CSS3',
+          description:
+            'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in HTML or XML.',
+          properties: [
+            {
+              name: 'color',
+              description: 'Sets the color of the text.',
+              values: [
+                {
+                  value: 'red',
+                  description:
+                    'Sets the text color to red.',
+                },
+                {
+                  value: 'blue',
+                  description:
+                    'Sets the text color to blue.',
+                },
+              ],
+            },
+            {
+              name: 'background-color',
+              description:
+                'Sets the background color of an element.',
+              values: [
+                {
+                  value: 'white',
+                  description:
+                    'Sets the background color to white.',
+                },
+                {
+                  value: 'black',
+                  description:
+                    'Sets the background color to black.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'JavaScript',
+          version: 'ES6',
+          description:
+            'JavaScript is a programming language used to create interactive effects within web browsers.',
+          functions: [
+            {
+              name: 'alert()',
+              description:
+                'Displays an alert box with a specified message and an OK button.',
+              parameters: [
+                {
+                  name: 'message',
+                  type: 'string',
+                  description:
+                    'The message to display in the alert box.',
+                },
+              ],
+            },
+            {
+              name: 'getElementById()',
+              description:
+                'Returns the element with the specified ID.',
+              parameters: [
+                {
+                  name: 'id',
+                  type: 'string',
+                  description:
+                    'The ID of the element to find.',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
   })
 })

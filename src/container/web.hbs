@@ -1,0 +1,63 @@
+<div>
+  <h1>Languages :</h1>
+  {{#with web.languages.[0]}}
+  <div>
+          <h3>{{name}},{{version}},{{description}}</h3>
+          <h4>Elements:</h4>
+          <ul>
+            {{#each elements}}
+              <li>
+                <b>{{this.name}}</b>: {{description}}<br>
+                Attributes:
+                <ul>
+                  {{#each attributes}}
+                    <li><b>{{this.name}}</b>: {{this.description}}</li>
+                  {{/each}}
+                </ul>
+              </li><br>
+            {{/each}}
+            <h2></h2>
+          </ul>
+    {{/with}}
+  </div>
+  {{#with web.languages.[1]}}
+  <div>
+          <h3>{{name}},{{version}},{{description}}</h3>
+          <h4>Elements:</h4>
+          <ul>
+            {{#each properties}}
+              <li>
+                <b>{{this.name}}</b>: {{description}}<br>
+                Attributes:
+                <ul>
+                  {{#each values}}
+                    <li><b>{{this.name}}</b>: {{this.description}}</li>
+                  {{/each}}
+                </ul>
+              </li><br>
+            {{/each}}
+            <h2></h2>
+          </ul>
+      {{/with}}
+  </div>
+{{#with web.languages.[2]}}
+  <div>
+          <h3>{{name}},{{version}},{{description}}</h3>
+          <h4>Elements:</h4>
+          <ul>
+            {{#each functions}}
+              <li>
+                <b>{{this.name}}</b>: {{description}}<br>
+                Attributes:
+                <ul>
+                  {{#each parameters}}
+                    <li><b>{{this.name}}</b>: Type  {{this.type}} , {{this.description}}</li>
+                  {{/each}}
+                </ul>
+              </li><br>
+            {{/each}}
+            <h2></h2>
+          </ul>
+    {{/with}}
+  </div>
+</div>
