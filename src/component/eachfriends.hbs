@@ -1,0 +1,12 @@
+<div>
+    <h5>Friends:</h5>
+  <ul>
+    {{#each data}}
+      <li>
+        {{this.id}}  {{this.name}} {{this.gender}} {{this.age}}
+      
+      {{>eachmutualfr data=mutual_friends}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

@@ -2,7 +2,7 @@
   {{#with main}}
     <main>
     <section>
-      {{>title big=true data=summary.title}}
+      {{>title h1=true data=summary.title}}
       <div>
         <p>
           {{summary.text}}
@@ -11,7 +11,7 @@
     </section>
 
     <section>
-      {{>title  big=false data=experience.title}}
+      {{>title  h2=true data=experience.title}}
        
        {{#with experience}}
       <div>

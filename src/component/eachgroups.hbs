@@ -1,0 +1,11 @@
+<div>
+      <b>Groups:</b> 
+  <ul>
+    {{#each data}}
+        <li>
+            <hb>{{this.id}} {{this.name}} </b> {{this.description}} 
+                {{>eachmembers data=members}}
+        </li>
+    {{/each}}
+  </ul>
+</div>
