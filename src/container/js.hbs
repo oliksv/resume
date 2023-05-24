@@ -1,0 +1,22 @@
+<div>
+  <span class="badge text-bg-success"><h1>{{name}}</h1></span>
+  <p{{description}}></p>
+  <p>Year:{{history.year}}, Founder:{{history.founder}}</p>
+<hr>
+{{>each title="Types"   data=types}}
+{{>each title="Variables"  data=syntax.variables}}
+{{>each title="Fuctions"  data=syntax.functions}}
+{{>each title="Conditions"  data=syntax.conditionals}}
+{{>each title="Loops"  data=syntax.loops}}
+{{>each title="Classes"  data=syntax.classes}}
+{{>each title="Features"  data=features}}
+{{>each title="Librariess"  data=libraries}}
+{{>each title="Tools"  data=tools}}
+{{>each2 title="Community"  data=community }}
+
+
+
+
+
+
+</div>

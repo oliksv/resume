@@ -1,0 +1,85 @@
+<dev>
+  <div class='container text-center'>
+    <div class='row'>
+      <div class='col'>
+        <span
+          class='badge rounded-pill text-bg-secondary'
+        ><h2>{{name}}</h2></span>
+        <br />
+        {{description}}
+      </div>
+      <div class='col'>
+        <h2>{{category}}</h2>
+      </div>
+      <div class='col'>
+        <h4>Year:{{price}}</h4>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  {{#with features}}
+    <div class='container text-center'>
+      <div class='row'>
+        <div class='col'>
+          <h3>Processor:</h3>
+          {{processor.brand}}
+          {{processor.model}}
+          {{processor.speed}}
+          {{processor.cores}}
+          {{processor.cache}}
+          <h3>Memory:</h3>
+          {{memory.type}}
+          {{memory.size}}
+          {{memory.speed}}
+          <h3>Storage:</h3>
+          {{storage.type}}
+          {{storage.size}}
+          <h3>Display:</h3>
+          {{display.size}}
+          {{display.resolution}}
+          {{display.technology}}
+          {{display.color_space}}
+          {{display.brightness}}
+          {{display.refresh_rate}}
+          <h3>Graphics:</h3>
+          {{graphics.brand}}
+          {{graphics.model}}
+          {{graphics.memory}}
+          <h2>Ports:</h2>
+          {{#each ports}}
+            <ul>
+              <li>{{this.type}},{{this.count}}
+                {{#each features}}
+                  <ul>
+                    <li>{{this}}</li>
+                  </ul>
+                {{/each}}
+              </li>
+            </ul>
+          {{/each}}
+          <h3>Battery:</h3>
+          {{battery.type}}
+          {{battery.capacity}}
+          {{battery.life}}
+        </div>
+        <div class='col'>
+          <h3>Dimension:</h3>
+          weight:{{weight}},
+          {{dimensions.height}},
+          {{dimensions.width}},
+          {{dimensions.depth}}
+        </div>
+        <div class='col'>
+          <h3> Operation System:</h3>
+          {{operating_system}}
+          <hr />
+          <h3>Prices:</h3>
+          {{#each accessories}}
+            {{this.name}},{{this.price}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</dev>

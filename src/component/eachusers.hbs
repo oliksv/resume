@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    {{#each data}}
+      <li class="text-start">
+        <h4>{{this.id}} {{this.name}} </h4> {{this.gender}} {{this.age}}
+        {{>eachfriends data=friends}}
+     
+        {{>eachgroups data=groups}}<hr>
+      </li>
+    {{/each}}
+  </ul>
+</dev>
