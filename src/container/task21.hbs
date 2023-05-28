@@ -1,0 +1,52 @@
+<div class='card'>
+  {{#with heading}}
+    <div class='card-body'>
+      {{>cardpri data=main}}
+      {{>cardsec data=second}}
+      {{>cardsec data=subblock}}
+    </div>
+  {{/with}}
+  </div>
+   <br><br>
+<div class="card">
+  {{#with nested_display}}
+      <div class='card-body'>
+        <h1 class="display-1">{{title}}</h1>
+        <p>{{text}}</p>
+        <button
+          class='btn btn-outline-primary'
+        >{{button.text}}</button><br>
+          <div class="card">
+            <div class='card-body'>
+              <h6 class="display-6">{{header_text}}</h6><br>
+                  <button
+                    class='btn btn-outline-primary'
+                  >{{button.text}}</button><br>
+            </div>
+          </div>
+      </div>
+      {{/with}}
+    <div class="card">
+        {{#with paragraph}}
+        <div class='card-body'>
+             <h1 class="display-1">{{title}}</h1>
+              <p>{{text}}</p>
+               <a class='btn btn-outline-primary' href={{url}}>{{button.text}}</a><br>
+            <br>
+            List:
+            <div class="card">
+               <div class='card-body'>
+                <ul></ul>
+                  {{#each list_name}}
+                    <li><a  href={{this.url}}>{{this.text}}</a></li>
+                  {{/each}}
+                </ul>
+               </div>
+            </div>
+       
+       </div>
+        {{/with}}
+    </div>  
+
+
+</div>

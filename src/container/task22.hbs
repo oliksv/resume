@@ -1,0 +1,56 @@
+{{#with page_header}}
+  <h1 class='display-1'>{{title}}</h1>
+  <p>{{description}}</p>
+{{/with}}
+<div>
+  {{#with section}}
+    <div class='card'>
+      {{#with about_us}}
+        <div class='card-body'>
+          {{#with title_list}}
+            <p>{{main}}</p>
+            <p>{{sub}}</p>
+
+          {{/with}}
+          <button
+            class='btn btn-outline-primary'
+          >{{button.text}}</button><br />
+        </div>
+      {{/with}}
+      <br />
+    </div>
+    <div class='card'>
+      {{#with advantage}}
+        <div class='card-body'>
+          <p class='display-5'>{{title}}</p>
+          {{>tsdb data=efficiency}}
+          {{>tsdb data=innovation}}
+           {{>tsdb data=collaboration}}
+          </div>
+      {{/with}}
+    </div>
+    <div class='card'>
+          {{#with agreement}}
+              <div class='card-body'>
+                <p class='display-5'>{{title}}</p>
+                        <div class='card'>
+                            {{#with info}}
+                                <div class='card-body'>
+                                    <p >{{sub_title}}</p>
+                                       <div class='card'>
+                                            {{#with detail}}
+                                                <div class='card-body'>
+                                                    <p >{{text}}</p>
+                                                      <button type="button" class="btn btn-success">{{button}}</button>
+                                                  </div>
+                                              {{/with}}
+                                        </div>
+                                  </div>
+                              {{/with}}
+                        </div>
+                </div>
+          {{/with}}
+    </div>
+
+  {{/with}}
+</div>
