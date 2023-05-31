@@ -1,0 +1,13 @@
+<div class='card' style='width: 18rem;'>
+  <div class='card-header'>
+    <h6>{{data.name}}</h6>
+  </div>
+  <ul class='list-group list-group-flush'>
+    {{#each data.items}}
+      <li class='list-group-item'>{{this}}</li>
+    {{/each}}
+  </ul>
+  <div class='card-footer'>
+    {{! <button class='btn btn-dark btn-sm'>UpdateList</button> }}
+  </div>
+</div>
