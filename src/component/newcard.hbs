@@ -1,0 +1,15 @@
+<section class='card' style='width: 18rem;'>
+  {{#with data}}
+    <img src={{image}} class='card-img-top' />
+    <div class='card-body'>
+      <h5 class='card-title'>{{title}}</h5>
+      {{#if isHot}}
+        <span class='badge text-bg-danger'>HOT</span>
+      {{/if}}
+      {{#if isNew}}
+        <span class='badge text-bg-success'>NEW</span>
+      {{/if}}
+      <p class='card-text'>{{description}}</p>
+    </div>
+  {{/with}}
+</section>

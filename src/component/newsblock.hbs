@@ -1,0 +1,14 @@
+<div>
+  {{#with data}}
+    <div class='alert alert-dark' role='alert'>
+      <h5>{{title}}</h5>
+      {{#if isTop}}
+        <span class='badge text-bg-danger'>TOP</span>
+      {{/if}}
+      {{#if isNew}}
+        <span class='badge text-bg-success'>NEW</span>
+      {{/if}}
+      {{description}}
+    </div>
+  {{/with}}
+</div>
