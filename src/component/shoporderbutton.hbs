@@ -1,0 +1,33 @@
+<div class='m-2'>
+  {{#if data.isSuccess}}
+    <button
+      type='button'
+      class='btn btn-success'
+    >{{data.text}}</button>
+  {{/if}}
+  {{#if data.isDanger}}
+    <button
+      type='button'
+      class='btn btn-danger'
+    >{{data.text}}</button>
+  {{/if}}
+  {{#if data.isInfo}}
+    <button
+      type='button'
+      class='btn btn-info'
+    >{{data.text}}</button>
+  {{/if}}
+  {{#if data.isPrimary}}
+    <button
+      type='button'
+      class='btn btn-primary'
+    >{{data.text}}</button>
+  {{/if}}
+  {{#if data.isOutline}}
+    <button
+      type='button'
+      class='btn btn-outline-primary'
+    >{{data.text}}</button>
+  {{/if}}
+
+</div>
