@@ -1,0 +1,187 @@
+<main >
+  <div class='card'>
+    <div class='card-body'>
+      {{#with navigation}}
+        <ul class='nav'>
+          {{#each links}}
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                href={{this.href}}
+              >{{this.text}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/with}}
+    </div>
+  </div>
+  
+  <h2>{{header}}</h2>
+    <div class="row">
+        <div class="col-8 mb-0">
+                    <div class='card'>
+                                <div class='card-body'>
+                                    {{#with contacts_data}}
+                                        <h4>{{title}}</h4>
+                                        {{#each buttons}}
+                                                    {{#if isPrimary}}
+                                                        <input
+                                                        type='checkbox'
+                                                        class='btn-check'
+                                                        id='btn-check-outlined'
+                                                        autocomplete='off'
+                                                        />
+                                                        <label
+                                                        class='btn btn-outline-primary'
+                                                        for='btn-check-outlined'
+                                                        >{{text}}</label>
+                                                    {{/if}}
+                                                    {{#if isOutline}}
+                                                        <input
+                                                        type='checkbox'
+                                                        class='btn-check'
+                                                        id='btn-warning-outlined'
+                                                        autocomplete='off'
+                                                        />
+                                                        <label
+                                                        class='btn btn-outline-warning'
+                                                        for='btn-warning-outlined'
+                                                        >{{text}}</label>
+                                                    {{/if}}
+                                                {{/each}}
+
+                                        {{#with form.input}}
+                                                <div class='row'>
+                                                    {{>shoporderinput data=surname}} 
+                                                    {{>shoporderinput data=name}} 
+                                                    {{>shoporderinput data=phone}}
+                                                    {{>shoporderinput data=email}}  
+                                                </div>
+                                        {{/with}}
+
+                                    
+                                        {{#each form.switch}}
+                                            {{>shoporderswitch data=this}}
+                                        {{/each}}
+                                    {{/with}}
+
+
+
+                                </div>
+                        </div>
+            </div>
+
+                <div class="col-4">
+                    <div class='card m-2'>
+                        <div class='card-body'>
+                           
+                           {{#each action_block}}
+                             {{>shoporderbutton data=this}}
+                            {{/each}}
+                        </div>
+                    </div>
+
+                    <div class='card m-2'>
+                        <div class='card-body'>
+                          {{#with total}}
+                            <h5 class="card-title">{{title}}</h5>
+                            <ul>
+                              {{#each item_list}}
+                              <li>{{this.name}}:{{this.price}}</li>
+                              {{/each}}
+                            </ul>
+                            <hr>
+
+                            <ul>
+                              {{#each additional_info}}
+                              <li>{{this.text}}:{{this.value}}</li>
+                              {{/each}}
+                            </ul>
+                            <hr>
+                            {{#each button}}
+                            {{>shoporderbutton data=this}}
+                            {{/each}}
+                          {{/with}}
+                        </div>
+                    </div>
+                
+                </div>
+    
+      <div class="col-8 mt-0">
+          <div class='card'>
+              <div class='card-body'>
+                {{#with delivery}}
+                   <h5 class="card-title">{{title}}</h5>  
+                              <div class="card">
+                                <div class="card-body">
+                                  <div class="row">
+                                      {{#each select}}
+                                      <div class="col-6">
+                                          {{>shoporderselect data=this }}
+                                          </div>
+                                      {{/each}}
+                                  </div>
+                                    
+                                </div>
+                              </div>
+                      
+                    {{>shoporderradio data=delivery_type}}
+                    
+                    {{#with payment}}
+                    <h5>{{title}}</h5>
+                    {{>shoporderradio data=list}}
+                    {{/with}}
+
+
+                                        {{#with contact}}
+                                        <h5>{{title}}</h5>
+                                                <div class='row'>
+                                                    {{>shoporderinput data=surname}} 
+                                                    {{>shoporderinput data=name}} 
+                                                    {{>shoporderinput data=phone}}
+                                                    {{>shoporderinput data=email}}  
+                                                </div>
+                                        {{/with}}
+                                        {{>shoporderinput data=coment}}
+                  {{/with}}  
+
+
+                </div>
+            </div>
+        </div>
+
+      <div class="col-8 mt-3">
+          <div class='card'>
+              <div class='card-body'>
+                  {{#with coupon}}
+                   <h5 class="card-title">{{title}}</h5> 
+                    <div class="card">
+                                <div class="card-body">
+                                      <div class="row">
+                                          {{#each select}}
+                                                <div class="col-6">
+                                                  {{this.label}}
+                                                  {{>shoporderselect data=this }}
+                                              </div>
+                                          {{/each}}
+                                      </div>
+                                    
+                                </div>
+                        </div>
+                 
+                                        {{#with add}}
+                                  
+                                                <div class='row'>
+                                                    {{>shoporderinput data=friend}} 
+                                                    {{>shoporderinput data=colleague}} 
+                                                </div>
+                                        {{/with}}
+                  {{/with}}
+              </div>
+          </div>  
+       </div>
+
+                  
+
+    </div>
+</main>
