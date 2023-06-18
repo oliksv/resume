@@ -1,32 +1,44 @@
-<div class='m-2'>
+<div class='col-2 m-2'>
   {{#if data.isSuccess}}
     <button
       type='button'
       class='btn btn-success'
+      href={{data.link}}
     >{{data.text}}</button>
   {{/if}}
   {{#if data.isDanger}}
     <button
       type='button'
       class='btn btn-danger'
+      href={{data.link}}
     >{{data.text}}</button>
   {{/if}}
   {{#if data.isInfo}}
     <button
       type='button'
       class='btn btn-info'
+      href={{data.link}}
     >{{data.text}}</button>
   {{/if}}
   {{#if data.isPrimary}}
     <button
       type='button'
       class='btn btn-primary'
+      href={{data.link}}
     >{{data.text}}</button>
   {{/if}}
   {{#if data.isOutline}}
     <button
       type='button'
       class='btn btn-outline-primary'
+      href={{data.link}}
+    >{{data.text}}</button>
+  {{/if}}
+  {{#if data.isSecondary}}
+    <button
+      type='button'
+      class='btn btn-secondary'
+      href={{data.link}}
     >{{data.text}}</button>
   {{/if}}
 
