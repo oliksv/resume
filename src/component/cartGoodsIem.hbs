@@ -1,0 +1,25 @@
+<div class='card  mt-2 ms-2 me-2 mb-2' >
+  <div class='card-body row'>
+            <img
+                src={{data.image}}
+                class='card-img-right col-2'
+            />
+        <div class="col-4">
+                <h5 class='card-title '>{{data.name}}</h5>
+                <p>{{data.description}}</p>
+        </div>
+           <div class="col-2" >
+            {{data.price.title}}
+            {{data.price.value}}
+           </div>
+           <div class="col-2" >
+            {{data.amount}}
+           </div>
+           <div class="col-2" >
+            {{#each data.buttons}}
+                {{>shoporderbutton data=this }}
+            {{/each}}
+           </div>
+  
+  </div>
+</div>

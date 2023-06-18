@@ -1,0 +1,134 @@
+<main>
+  <div class='card'>
+    <div class='card-body'>
+      {{#with navigation}}
+        <ul class='nav'>
+          {{#each links}}
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                href={{this.href}}
+              >{{this.text}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/with}}
+    </div>
+  </div>
+  <h2>{{header}}</h2>
+
+  <div>
+    {{#with purchase}}
+            <ul class='nav nav-tabs'>
+              {{#each tabs}}
+                <li class='nav-item'>
+                  <a
+                    class='nav-link active'
+                    aria-current='page'
+                    href='#'
+                  >{{this}}</a>
+                </li>
+              {{/each}}
+            </ul>
+
+            <div class="mt-4">
+                          <div class='card'>
+                            {{#with actionBlock}}
+                                      <div class='card-body'>
+                                          <div class="row">
+                                              {{>shoporderinput data=input}}
+                                                  {{#each buttons}}
+                                                            {{>shoporderbutton data=this}}
+                                                  {{/each}}
+                                          </div>
+                                      </div>
+                            {{/with}}
+                          </div>
+              </div>
+        {{#each itemList}}
+             {{>purchaseitem data=this}}
+        {{/each}}
+    {{/with}}
+
+  </div>
+  <div >
+      {{#with userInfo}}
+            <h4>{{title}}</h4>
+            <div class='card mt-2 t'>
+               <div class='card-body'>
+                  {{#with profileData}}
+                  <h5>{{title}}</h5>
+                      <div class='card mt-2'>
+                        <div class='card-body  row'>
+                             {{#with fullName}}
+                                {{>profiletitle data=surname}}
+                                {{>profiletitle data=name}}
+                                {{>profiletitle data=middleName}}
+                              {{/with}}
+                        </div>
+                      </div>
+
+                      <div class='card mt-2'>
+                        <div class='card-body  row'>
+                             {{#with otherInfo}}
+                                {{>profiletitle data=birthday}}
+                                {{>profiletitle data=sex}}
+                                {{>profiletitle data=language}}
+                              {{/with}}
+                        </div>
+                      </div>
+                      
+                     
+                  {{/with}}
+                 <div class='card mt-2'>
+                        <div class='card-body  row'>
+                             {{#each buttons}}
+                                <div class="col-4">
+                                  {{>shoporderbutton data=this}}
+                                </div>
+                              {{/each}}
+                        </div>
+                      </div> 
+                </div>
+            </div>    
+
+
+          {{#with recipients}}
+            <h4>{{title}}</h4>
+            <div class='card mt-2 t'>
+               <div class='card-body row'>
+                    {{#each users}}
+                    {{>recipient data=this}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+
+
+            {{#with contacts}}
+            <h4>{{title}}</h4>
+            <div class='card mt-2 t'>
+               <div class='card-body row'>
+                    {{#each contactData}}
+                    {{>profilecontact data=this}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+
+      {{/with}}
+  </div>
+
+  <div class='card mt-2 t'>
+        <div class='card-body row '>
+                {{#each footer}}
+                           {{#each this}}
+                           <div class="col-3">
+                                     {{>shopcartlink data=this}}
+                           </div>
+                            {{/each}}
+                 {{/each}}
+              
+        </div>
+ </div>
+</main>

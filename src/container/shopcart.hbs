@@ -1,0 +1,87 @@
+<main>
+  <div class='card'>
+    <div class='card-body'>
+      {{#with navigation}}
+        <ul class='nav'>
+          {{#each links}}
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                href={{this.href}}
+              >{{this.text}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/with}}
+    </div>
+  </div>
+  <div class='card mt-2'>
+    <div class='card-body '>
+            {{#with header}}
+                <h2>{{title}}</h2>
+                {{>shopcartbutton data=button}}
+            {{/with}}
+    </div>
+  </div>
+  <div class='card mt-2'>
+        <div class='card-body'>
+            {{#each goodsBlock}}
+            {{>cartGoodsIem data=this}}
+            {{/each}}
+        </div>
+    </div>
+
+    <div class='card mt-2'>
+        <div class='card-body'>
+            {{#with total}}
+                <h4>{{title}}</h4>
+                <h5>{{amount}}</h5>
+                <p>{{delivery}}</p>
+                {{#each buttons}}
+                    {{>shoporderbutton data=this}}
+                {{/each}}
+            {{/with}}
+        </div>
+    </div>
+<div class='card mt-2 '>
+        <div class='card-body row'>
+                {{#with goodsOtherBlock}}
+                <h4 class="text-center">{{title}}</h4>
+                        {{#each cards}}
+                           <div class="col-4">
+                                     {{>newcard data=this}}
+                           </div>
+                        {{/each}}
+                {{/with}}
+        </div>
+ </div>
+
+<div class='card mt-2 text-bg-dark'>
+        <div class='card-body row '>
+                {{#with subscribe}}
+                <h4 class="text-center">{{header}}</h4>
+                      <p>{{description}}</p> 
+                        {{#each buttons}}
+                           <div class="col-3">
+                                     {{>shopcartsubbotton data=this}}
+                           </div>
+                        {{/each}}
+                {{/with}}
+        </div>
+ </div>
+
+<div class='card mt-2 t'>
+        <div class='card-body row '>
+                {{#each footer}}
+                           {{#each this}}
+                           <div class="col-3">
+                                     {{>shopcartlink data=this}}
+                           </div>
+                            {{/each}}
+                 {{/each}}
+              
+        </div>
+ </div>
+
+
+</main>

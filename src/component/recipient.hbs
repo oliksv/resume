@@ -1,0 +1,9 @@
+<div class='card m-2 col-4'>
+  <div class='card-body'>
+    {{#with data}}
+      <h5 class="card-title">{{name}}</h5>
+      <p class="card-text">{{phone}}</p>
+      {{>shopcartbutton data=button}}
+    {{/with}}
+  </div>
+</div>

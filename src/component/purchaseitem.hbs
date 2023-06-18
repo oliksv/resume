@@ -1,0 +1,23 @@
+<div class='card mt-2'>
+  <div class='card-body'>
+    {{#with data}}
+      <div class='row'>
+        <p class='col-2'>{{number}}
+          {{status}}
+        </p>
+        <p
+          class='col-2'
+        >{{amount.title}}{{amount.value}}</p>
+        <div class="col-6">
+          {{#each images}}
+            <img src={{this}} class='col-2' />
+          {{/each}}
+        </div>
+            <div class="col-2">
+                 {{>shoporderbutton data=button}}
+            </div>
+           
+      </div>
+    {{/with}}
+  </div>
+</div>
