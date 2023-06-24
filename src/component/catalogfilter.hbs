@@ -1,0 +1,9 @@
+<div class="mt-2">
+    {{#with data}}
+     <h5>{{title}}</h5> 
+        {{#each options}}
+            {{>catalogcheck data=this}}
+        {{/each}}
+    {{/with}}
+    <hr>
+</div>

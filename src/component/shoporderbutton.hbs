@@ -1,4 +1,4 @@
-<div class='col-2 m-2'>
+<div class='m-2'>
   {{#if data.isSuccess}}
     <button
       type='button'
@@ -38,6 +38,13 @@
     <button
       type='button'
       class='btn btn-secondary'
+      href={{data.link}}
+    >{{data.text}}</button>
+  {{/if}}
+  {{#if data.isWarning}}
+    <button
+      type='button'
+      class='btn btn-warning'
       href={{data.link}}
     >{{data.text}}</button>
   {{/if}}

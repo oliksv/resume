@@ -1,0 +1,12 @@
+<div class='card mt-2 t'>
+        <div class='card-body row '>
+                {{#each data}}
+                           {{#each this}}
+                           <div class="col-3">
+                                     {{>shopcartlink data=this}}
+                           </div>
+                            {{/each}}
+                 {{/each}}
+              
+        </div>
+ </div>

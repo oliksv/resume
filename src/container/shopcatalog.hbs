@@ -1,0 +1,65 @@
+<main>
+{{>navigation data=navigation}}
+{{>shopcatalogbreadcrumb data=breadcrumb}}
+<h3>{{header}}</h3>
+<div class="row">
+    {{#each sortBlock}}
+    <div class="col-4">
+        {{>shoporderselect data=this}}
+    </div>
+    {{/each}}
+</div>
+
+        <div class="row ">
+                    <div class="col-4">
+                        {{#with filterBlock}}
+                        <div class='card mt-2'>
+                                <div class='card-body'>
+                                    {{sellers.title}}
+                                    {{#each sellers.list}}
+                                        {{>catalogcheck data=this}}
+                                    {{/each}}
+                                    <hr>
+                                    <div>
+                                        {{#with brands}}
+                                            {{title}}
+                                            {{>shoporderinput data=input}}
+                                            {{#each options}}
+                                            {{>catalogcheck data=this}}
+                                            {{/each}}
+                                        {{/with}}
+                                        {{#with price}}
+                                            {{title}} 
+                                            
+                                                <div class="input-group">
+                                                    <span class="input-group-text">From / To</span>
+                                                    <input type="text" aria-label="8000"   class="form-control" placeholder="8000">
+                                                    <input type="text" aria-label="30000"  class="form-control" placeholder="30000">
+                                                </div>      
+                                            {{>shopcartsubbotton data=button}}
+                                        {{/with}}
+                                          <hr>
+                                          {{#each filterList}} 
+                                          {{>catalogfilter data=this}} 
+                                          {{/each}}
+                                           
+                                    </div>
+                                </div>
+                        </div>
+                        {{/with}}
+                    </div>
+                <div class="col-8">
+                    <div class="row">
+                            {{#each goodsList}}
+                                <div class="col-6">
+                                    {{>catalogItem data=this}}
+                                </div>
+                            {{/each}}
+                    </div>
+                    </div>
+
+                     {{>reviewgreencard data=service}}
+                     {{>reviewfooter data=footer}}
+        </div>
+
+</main>
