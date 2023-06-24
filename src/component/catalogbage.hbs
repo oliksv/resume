@@ -1,0 +1,22 @@
+<div>
+  {{#if isHot}}<span
+      class='badge rounded-pill text-bg-danger'
+    >HOT</span>
+  {{/if}}
+  {{#if isNew}}
+    <span
+      class='badge rounded-pill text-bg-primary'
+    >NEW</span>
+  {{/if}}
+  {{#if isFree}}
+    <span
+      class='badge rounded-pill text-bg-success'
+    >FREE</span>
+  {{/if}}
+  {{#if isFast}}
+    <span
+      class='badge rounded-pill text-bg-warning'
+    >FAST</span>
+  {{/if}}
+
+</div>

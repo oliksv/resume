@@ -1,0 +1,19 @@
+<nav aria-label='breadcrumb' class='ms-0'>
+
+  <ol class='breadcrumb'>
+    {{#each data}}
+
+      {{#if url includeZero=true}}
+        <li
+          class='breadcrumb-item active'
+          aria-current='page'
+        >{{this.name}}</li>
+      {{else}}
+        <li class='breadcrumb-item'><a
+            href={{this.url}}
+          >{{this.name}}</a></li>
+      {{/if}}
+    {{/each}}
+  </ol>
+
+</nav>

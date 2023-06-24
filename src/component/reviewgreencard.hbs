@@ -1,0 +1,15 @@
+<div class='card text-center text-bg-success mt-3 mb-3'>
+  {{#with data}}
+    <div class='card-header'>{{title}}</div>
+    <div class='card-body'>
+
+      <p class='card-text'>{{description}}</p>
+      {{#each buttons}}
+        <a
+          href={{this.link}}
+          class='btn btn-primary'
+        >{{this.text}}</a>
+      {{/each}}
+    </div>
+  {{/with}}
+</div>

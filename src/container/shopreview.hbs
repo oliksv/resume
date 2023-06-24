@@ -1,0 +1,63 @@
+<main >
+    {{>navigation data=navigation}}
+    <div class="row">
+        {{#with formBlock}}
+            <div class="col-8 mt-2">
+                    <h2 class="mt-2">{{header}}</h2>
+                    <p class="col-2 mt-2">
+                        {{rating.title}}{{rating.value}}
+                    </p>
+                            {{#with actionBlock}}
+                                <div >
+                                    {{>tabsreview data=tabs}}
+                                </div>
+                                {{>cardreview data=report}}
+                            {{/with}}
+                    <div class="row">
+                        {{#with feedbackBlock}}
+                            <h3 class="mt-2">{{title}}</h3>
+                                {{#each buttons}}
+                                 <div class="col-4">
+                                    {{>shoporderbutton data=this}}
+                                 </div>
+                                 {{/each}}
+                        {{/with}}
+                    </div>
+            </div>
+          <div class="col-4">
+                {{>goodsfotoname data=goodsInfo}}
+                        {{#with goodsInfo}}
+                            <div>
+                                        <div class='card mt-2'>
+                                            <div class='card-body ps-2'>
+                                                
+                                                <h6>{{price}}</h6>
+                                                {{#if inMarket}}<p>Є в наявності</p>
+                                                    {{else}}
+                                                    <p>Нема в наявності</p>
+                                                {{/if}}   
+                                                {{#each buttons}}
+                                                    {{>shoporderbutton data=this}}
+                                                {{/each}} 
+                                            </div>
+                                        </div>
+                                        <div class='card mt-2'>
+                                            <div class='card-body ps-2'>
+                                                <p>{{seller.title}}:<b>{{seller.value}}</b></p>
+                                            </div>
+                                        </div>
+                            </div>
+                        {{/with}}
+          </div> 
+        {{/with}}
+        <div >
+                {{#each reviewList}}
+                    <div>
+                        {{>reviewItem data=this}}
+                    </div>
+                {{/each}}
+        </div>
+    </div>
+    {{>reviewgreencard data=service}}
+    {{>reviewfooter data=footer}}
+</main>
