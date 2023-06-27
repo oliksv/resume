@@ -34,12 +34,12 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/index', function (req, res) {
+router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {
-    layout: 'basic',
+    layout: 'index',
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
